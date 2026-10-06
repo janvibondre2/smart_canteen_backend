@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Canteen Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h2>🍴 Smart Canteen</h2>
+
+            <nav>
+                <a href="#" class="active">🏠 Dashboard</a>
+                <a href="#">🍔 Menu</a>
+                <a href="#">📋 Orders</a>
+                <a href="#">📦 Food Availability</a>
+                <a href="#">📊 Analytics</a>
+                <a href="#">⚙️ Settings</a>
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN DASHBOARD -->
+        <main class="dashboard">
+
+            <!-- HEADER -->
+            <div class="header">
+
+                <div>
+                    <h1>Smart Canteen</h1>
+                    <p class="subtitle">
+                        Management & Analytics Dashboard
+                    </p>
+                </div>
+
+                <div class="admin-info">
+                    <span>👤 Admin</span>
+                </div>
+
+            </div>
+
+
+            <!-- SUMMARY CARDS -->
+            <div class="cards">
+
+                <div class="card">
+                    <div class="card-icon">🛒</div>
+                    <h3>Total Orders</h3>
+                    <p id="totalOrders">0</p>
+                    <span>Orders in system</span>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">💰</div>
+                    <h3>Paid Revenue</h3>
+                    <p id="totalRevenue">₹0</p>
+                    <span>Paid transaction amount</span>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">⏳</div>
+                    <h3>Pending Orders</h3>
+                    <p id="pendingOrders">0</p>
+                    <span>Currently pending</span>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">⚠️</div>
+                    <h3>Unavailable Food</h3>
+                    <p id="unavailableFoodItems">0</p>
+                    <span>Items unavailable</span>
+                </div>
+
+            </div>
+
+
+            <!-- CHARTS -->
+            <div class="charts">
+
+                <div class="chart-box">
+                    <h2>Orders by Food Item</h2>
+                    <canvas id="foodChart"></canvas>
+                </div>
+
+
+                <div class="chart-box">
+                    <h2>Orders by Time</h2>
+                    <canvas id="timeChart"></canvas>
+                </div>
+
+
+                <div class="chart-box">
+                    <h2>Food Popularity</h2>
+                    <canvas id="popularityChart"></canvas>
+                </div>
+
+
+                <div class="chart-box">
+                    <h2>Food Availability</h2>
+                    <canvas id="inventoryChart"></canvas>
+                </div>
+
+            </div>
+
+
+            <!-- SMART INSIGHTS -->
+            <div class="insights">
+
+                <h2>Smart Insights</h2>
+
+                <div class="insight-box">
+
+                    <p id="peakTimeInsight">
+                        🔥 Peak ordering time: Calculating...
+                    </p>
+
+                    <p id="popularFoodInsight">
+                        🏆 Most ordered food: Calculating...
+                    </p>
+
+                    <p id="lowStockInsight">
+                        ⚠️ Food availability: Checking...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECENT ORDERS -->
+            <div class="recent-orders">
+
+                <h2>Recent Orders</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Student</th>
+                            <th>Food Item</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="recentOrdersBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="dashboard-data.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
